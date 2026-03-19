@@ -4,10 +4,13 @@ let addButton=document.getElementById("addButton")
 let searchBox=document.getElementById("search")
 let searchButton=document.getElementById("searchButton")
 let taskContainer=document.getElementById("taskContainer")
+let completedTask=document.getElementById("completed")
+let notCompletedTasks=document.getElementById("notcompleted")
 
-
-//Lists
+//Lists and Variables
 let tasks=[]
+let complet=0
+let notComplete=0
 
 //Functions
 function addText(){
@@ -32,21 +35,43 @@ function addTasks(){
     //Inner Html
     para.innerHTML=`${task}`
     tickImg.src="https://cdn-icons-png.flaticon.com/128/7103/7103702.png"
+    crossImg.src="https://cdn-icons-png.flaticon.com/128/83/83972.png"
     //Adding elements
     completeBtn.appendChild(tickImg)
+    notCompleteBtn.appendChild(crossImg)
     newdiv.appendChild(para)
     newdiv.appendChild(completeBtn)
+    newdiv.appendChild(notCompleteBtn)
     //Styles
     tickImg.style.height="10px"
     tickImg.style.width="10px"
+    crossImg.style.height="10px"
+    crossImg.style.width="10px"
     para.style.margin="auto"
     para.style.flex="1"
+    para.style.border="1px solid black"
     newdiv.style.display="flex"
-    newdiv.style.border="1px solid black"
+    // newdiv.style.border="1px solid black"
     newdiv.style.marginTop="5px"
     newdiv.style.gap="1px"
     taskContainer.appendChild(newdiv)
+    //Event Listner
+    completeBtn.addEventListener("click",completedTasks)
+    notCompleteBtn.addEventListener("click",nonCompletedTasks)
 }
+
+function completedTasks(){
+    complet+=1
+    completedTask.innerText=`Completed: ${complet}`
+}
+
+function nonCompletedTasks(){
+    notComplete+=1
+    notCompletedTasks.innerText=`Not Completed: ${notComplete}`
+}
+
+
 //Event Listeners
 addButton.addEventListener("click",addTasks)
 addButton.addEventListener("click",addTaskToList)
+
