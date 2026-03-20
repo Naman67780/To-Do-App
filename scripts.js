@@ -11,6 +11,7 @@ let notCompletedTasks=document.getElementById("notcompleted")
 let tasks=[]
 let complet=0
 let notComplete=0
+let newdiv
 
 //Functions
 function addText(){
@@ -23,10 +24,11 @@ function addTaskToList(){
     let task=addBox.value
     tasks.push(task)
 }
+
 function addTasks(){
     let task=addBox.value
     //creating elements
-    let newdiv=document.createElement("div")
+    newdiv=document.createElement("div")
     let para=document.createElement("p")
     let completeBtn=document.createElement("button")
     let tickImg=document.createElement("img")
@@ -58,7 +60,10 @@ function addTasks(){
     //Event Listner
     completeBtn.addEventListener("click",completedTasks)
     notCompleteBtn.addEventListener("click",nonCompletedTasks)
+    notCompleteBtn.addEventListener("click",removeTask)
+    completeBtn.addEventListener("click",removeTask)
 }
+
 
 function completedTasks(){
     complet+=1
@@ -69,7 +74,10 @@ function nonCompletedTasks(){
     notComplete+=1
     notCompletedTasks.innerText=`Not Completed: ${notComplete}`
 }
-
+function removeTask(){
+    let taskToremove=newdiv
+    newdiv.remove()
+}
 
 //Event Listeners
 addButton.addEventListener("click",addTasks)
