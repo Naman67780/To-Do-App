@@ -13,18 +13,20 @@ let tasktoAdd={}
 //Functions
 function addTask(){
     const task=inputBox.value
+    if(task=="")return
     tasktoAdd={
         id:idCount,
         name:task
     }
     idCount++
-    taskList.push(task)
+    taskList.push(tasktoAdd)
+    displayTask(tasktoAdd)
 
 }
-function displayTask(){
-    const task=inputBox.value
+function displayTask(t){
+    const task=t["name"]
     const para=document.createElement("p")
-    para.setAttribute("task-id",tasktoAdd["id"])
+    para.setAttribute("task-id",t["id"])
     const tickButton=document.createElement("button")
     const crossButton=document.createElement("button")
     const tickImg=document.createElement("img")
@@ -40,13 +42,15 @@ function displayTask(){
     para.appendChild(crossButton)
     tickButton.style.marginLeft="10px"
     taskContainer.appendChild(para)
-    //Inner Functions
    
 }
 function removeImput(){
     inputBox.value=""
 }
+function removeTask(){
+    tasktoAdd["id"].remove()
+}
 
 //Event Listners
-addButton.addEventListener("click",displayTask)
+addButton.addEventListener("click",addTask)
 addButton.addEventListener("click",removeImput)
