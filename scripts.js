@@ -5,11 +5,16 @@ const addButton=document.getElementById("addButton")
 const searchBox=document.getElementById("searchBox")
 const searchButton=document.getElementById("searchButton")
 const taskContainer=document.getElementById("taskContainer") 
-
+const completedTaskRender=document.getElementById("completedTasks")
+const incompletedTaskRender=document.getElementById("incompletedTasks")
 //Variables and Lists
 let taskList=[]
 let idCount=0
 let tasktoAdd={}
+let completeCount=1
+let incompleteCount=1
+completedTaskRender.innerHTML="Completed : 0"
+incompletedTaskRender.innerHTML="Incompleted : 0"
 //Functions
 function addTask(){
     const task=inputBox.value
@@ -50,6 +55,8 @@ function displayTask(t){
         taskList=taskList.filter(item=>item.id!=t.id)
         para.remove()
     })
+    tickButton.addEventListener("click",completedTasksrender)
+    crossButton.addEventListener("click",incompletedTasksrender)
    
 }
 function removeImput(){
@@ -57,6 +64,14 @@ function removeImput(){
 }
 function removeTask(){
     tasktoAdd["id"].remove()
+}
+function completedTasksrender(){
+    completedTaskRender.innerText=`Completed: ${completeCount}`
+    completeCount++
+}
+function incompletedTasksrender(){
+    incompletedTaskRender.innerText=`Incompleted: ${incompleteCount}`
+    incompleteCount++
 }
 
 //Event Listners
