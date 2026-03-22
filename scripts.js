@@ -62,9 +62,6 @@ function displayTask(t){
 function removeImput(){
     inputBox.value=""
 }
-function removeTask(){
-    tasktoAdd["id"].remove()
-}
 function completedTasksrender(){
     completedTaskRender.innerText=`Completed: ${completeCount}`
     completeCount++
