@@ -8,14 +8,23 @@ const taskContainer=document.getElementById("taskContainer")
 
 //Variables and Lists
 let taskList=[]
+let idCount=0
+let tasktoAdd={}
 //Functions
 function addTask(){
     const task=inputBox.value
+    tasktoAdd={
+        id:idCount,
+        name:task
+    }
+    idCount++
     taskList.push(task)
+
 }
 function displayTask(){
     const task=inputBox.value
     const para=document.createElement("p")
+    para.setAttribute("task-id",tasktoAdd["id"])
     const tickButton=document.createElement("button")
     const crossButton=document.createElement("button")
     const tickImg=document.createElement("img")
@@ -41,4 +50,3 @@ function removeImput(){
 //Event Listners
 addButton.addEventListener("click",displayTask)
 addButton.addEventListener("click",removeImput)
-console.log(taskList)
