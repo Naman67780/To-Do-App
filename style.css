@@ -10,9 +10,4 @@ body{
     display: flex;
 
 }
-#completed{
-    font-size: 10px;
-}
-#notcompleted{
-    font-size: 10px;
-}
+
