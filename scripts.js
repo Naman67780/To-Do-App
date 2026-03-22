@@ -42,6 +42,14 @@ function displayTask(t){
     para.appendChild(crossButton)
     tickButton.style.marginLeft="10px"
     taskContainer.appendChild(para)
+    crossButton.addEventListener("click",function (){
+        taskList=taskList.filter(item=>item.id!=t.id)
+        para.remove()
+    })
+    tickButton.addEventListener("click",function (){
+        taskList=taskList.filter(item=>item.id!=t.id)
+        para.remove()
+    })
    
 }
 function removeImput(){
