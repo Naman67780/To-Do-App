@@ -5,9 +5,24 @@
     border-radius: 10px;
     display: inline-block;
    margin: auto;
+   background: rgba(255, 255, 255, 0.1);
 }
 body{
     display: flex;
-
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Inter', sans-serif;
 }
+#title{
+    font-size: 22px ;
+    font-weight: bold;
+}
+.task-item {
+  background: rgba(255,255,255,0.1);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+
+
+
 

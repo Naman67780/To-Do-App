@@ -34,6 +34,7 @@ function addTask(){
 function displayTask(t){
     const task=t["name"]
     const para=document.createElement("p")
+    para.classList.add("task-item");
     para.setAttribute("task-id",t["id"])
     const tickButton=document.createElement("button")
     const crossButton=document.createElement("button")
@@ -87,6 +88,10 @@ addButton.addEventListener("click",addTask)
 addButton.addEventListener("click",removeImput)
 searchBox.addEventListener("input",()=>{
     const valu=searchBox.value.toLowerCase()
+    if(valu==""){
+        searchList(taskList)
+        return
+    }
     const filteredData=taskList.filter((x)=>x["name"].toLowerCase().includes(valu))
     searchList(filteredData)
 })
