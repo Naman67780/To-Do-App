@@ -74,6 +74,7 @@ function incompletedTasksrender(){
     incompleteCount++
 }
 function searchList(data){
+        listElement.innerHTML = "" 
         data.forEach((item)=>{
         const lItem=document.createElement("li")
         lItem.innerText=item.name
@@ -81,8 +82,11 @@ function searchList(data){
     })
 }
 
-
-
 //Event Listners
 addButton.addEventListener("click",addTask)
 addButton.addEventListener("click",removeImput)
+searchBox.addEventListener("input",()=>{
+    const valu=searchBox.value.toLowerCase()
+    const filteredData=taskList.filter((x)=>x["name"].toLowerCase().includes(valu))
+    searchList(filteredData)
+})
