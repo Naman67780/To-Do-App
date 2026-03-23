@@ -1,57 +1,104 @@
-#toDO{
-    text-align: center;
-    padding: 20px;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    display: inline-block;
-   margin: auto;
-   background: rgba(255, 255, 255, 0.1);
+/* 🔥 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-body{
-    display: flex;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    font-family: 'Inter', sans-serif;
+
+/* 🌐 Body */
+body {
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
 }
-#title{
-    font-size: 22px ;
-    font-weight: bold;
+
+/* 📦 Main Container */
+#taskContainer {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-.task-item {
-  background: rgba(255,255,255,0.1);
-  padding: 5px;
-  border-radius: 10px;
+
+/* 📝 Input + Button */
+#inputTasks {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
+
+#addButton {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#addButton:hover {
+  background: #45a049;
+}
+
+/* 🔍 Search */
+#searchBox {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 📋 Task List */
+#taskContainer p {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ✅ Buttons inside task */
 #taskContainer button {
   border: none;
   background: transparent;
   cursor: pointer;
-
-  transition: 0.2s;
+  margin-left: 5px;
 }
-#taskList {
+
+#taskContainer button:hover {
+  transform: scale(1.2);
+}
+
+/* 📊 Counters */
+#completedTasks,
+#incompletedTasks {
   margin-top: 10px;
+  font-weight: bold;
+}
 
+/* 🔽 Search Dropdown List */
+#taskList {
   list-style: none;
-  padding: 0;
-
-  border-radius: 10px;
-
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   max-height: 150px;
   overflow-y: auto;
 }
+
 #taskList li {
-  padding: 8px 10px;
+  padding: 8px;
   cursor: pointer;
-  transition: 0.2s;
-}
-#searchBox {
-  margin-top: 10px;
 }
 
-
-
-
+#taskList li:hover {
+  background: #eee;
+}
