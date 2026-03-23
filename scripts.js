@@ -27,8 +27,6 @@ function addTask(){
     idCount++
     taskList.push(tasktoAdd)
     displayTask(tasktoAdd)
-    // listElement.innerHTML = ""   // clear old list
-    // searchList(taskList)
 
 }
 function displayTask(t){
