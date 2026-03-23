@@ -6,7 +6,6 @@ This is a simple To-Do app built using JavaScript that allows users to add, dele
 - Mark tasks as completed
 - Search tasks
 ## Tech Stack
-## Tech Stack
 - HTML
 - CSS
 - JavaScript
