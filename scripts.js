@@ -7,6 +7,7 @@ const searchButton=document.getElementById("searchButton")
 const taskContainer=document.getElementById("taskContainer") 
 const completedTaskRender=document.getElementById("completedTasks")
 const incompletedTaskRender=document.getElementById("incompletedTasks")
+const listElement=document.getElementById("taskList")
 //Variables and Lists
 let taskList=[]
 let idCount=0
@@ -26,6 +27,8 @@ function addTask(){
     idCount++
     taskList.push(tasktoAdd)
     displayTask(tasktoAdd)
+    // listElement.innerHTML = ""   // clear old list
+    // searchList(taskList)
 
 }
 function displayTask(t){
@@ -70,6 +73,15 @@ function incompletedTasksrender(){
     incompletedTaskRender.innerText=`Incompleted: ${incompleteCount}`
     incompleteCount++
 }
+function searchList(data){
+        data.forEach((item)=>{
+        const lItem=document.createElement("li")
+        lItem.innerText=item.name
+        listElement.appendChild(lItem)
+    })
+}
+
+
 
 //Event Listners
 addButton.addEventListener("click",addTask)
