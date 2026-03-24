@@ -1,5 +1,5 @@
 # To-Do-App
-This is a simple To-Do app built using JavaScript that allows users to add, delete, and search tasks.
+This is just a simple To-Do app built using JavaScript that allows users to add, delete, and search tasks.
 ## Features
 - Add tasks
 - Delete tasks
